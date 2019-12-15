@@ -1,0 +1,7 @@
+## Interface: 80100
+## Title: NMOTD
+## Author: someone...
+## Version: 1.0.1
+## DefaultState: Enabled
+## SavedVariablesPerCharacter: onetimevariable
+interface.xml

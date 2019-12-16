@@ -2,6 +2,13 @@
 	<Script file="main.lua"/>
 	<Script file="text_content.lua"/>
 
+	<!--Create font-->
+	<Font name="MyFont" font="Fonts\FRIZQT___CYR.TTF" virtual="true">
+	  <FontHeight>
+	    <AbsValue val="12"/>
+	  </FontHeight>
+	</Font>
+
 	<!--Create template -->
 	<Frame name="QuestionBordersFrame" virtual="true">
 		<Layers>
@@ -101,7 +108,7 @@
 		</Scripts>
 
 		<Size>
-			<AbsDimension x="100" y="100" />
+			<RelDimension x="0.6" y="0.4" />
 		</Size>
 		<Anchors>
 			<Anchor point="CENTER">
@@ -111,40 +118,56 @@
 			</Anchor>
 		</Anchors>
 
+
+
 		<!--BoxWithInfo-->
 		<Frames>
+
+		<Texture name="MyTexture" file="Interface\AddOns\NMOTD\images\ramka">
+			<Size>
+		  		<AbsDimension x="13" y="13"/>
+			</Size>
+			<Anchors>
+		  		<Anchor point="TOP">
+			    	<Offset>
+			      		<AbsDimension x="0" y="0"/>
+			    	</Offset>
+		  		</Anchor>
+			</Anchors>
+			<TexCoords left="0.398" right="0.445" top="0.402" bottom="0.449"/>
+		</Texture>
 			<Frame name="BoxWithInfoOne">
 				<Size>
-					<AbsDimension x="250" y="200" />
+					<RelDimension x="0.22" y="0.15" />
 				</Size>
 
 				<Anchors>
 					<Anchor point="TOPLEFT">
 						<Offset>
-							<AbsDimension x = "50" y = "-50" />
+							<AbsDimension x = "30" y = "-50" />
 						</Offset>
 					</Anchor>
 				</Anchors>
 
-				<backdrop bgFile="Interface\AddOns\NMOTD\images\makhar"> <!-- Setting material for background and edge -->
+				<backdrop bgFile="Interface\AddOns\NMOTD\images\magkhar"> <!-- Setting material for background and edge -->
 					<BackgroundInsets>
 						<AbsInset left="5" right="5" top="5" bottom="5"/> <!-- Moving background -->
 					</BackgroundInsets>
 				</backdrop>
 
 				<Frames>
-				    <ScrollFrame name="Text_Scroll" inherits="UIPanelScrollFrameTemplate">
+				    <ScrollFrame name="Text_Scroll">
 				        <Anchors>
-				            <Anchor point="TOPLEFT" x="12" y="-10"/>
+				            <Anchor point="TOPLEFT" x="12" y="-130"/>
 				                <Anchor point="BOTTOMRIGHT" x="-22" y="10"/>
 				            </Anchors>
 				            <ScrollChild>
 				                <Frame>
-					                <Size x="10" y="10"/>
+					                <Size x="10" y="-10"/>
 					                <Frames>
-					                    <SimpleHTML name="Text_Scroll_Content">
+					                    <SimpleHTML name="Text_Scroll_Content_One">
 					                        <Size>
-												<AbsDimension x="350" y="150" />
+												<RelDimension x="0.2" y="0.009" />
 											</Size>
 					                        <Anchors>
 					                            <Anchor point="TOPLEFT" x="0" y="-5"/>
@@ -159,36 +182,36 @@
 
 			<Frame name="BoxWithInfoTwo">
 				<Size>
-					<AbsDimension x="250" y="200" />
+					<RelDimension x="0.22" y="0.15" />
 				</Size>
 
 				<Anchors>
 					<Anchor point="BOTTOMLEFT">
 						<Offset>
-							<AbsDimension x = "50" y = "50" />
+							<AbsDimension x = "30" y = "50" />
 						</Offset>
 					</Anchor>
 				</Anchors>
 
-				<backdrop bgFile="Interface\AddOns\NMOTD\images\anton"> <!-- Setting material for background and edge -->
+				<backdrop bgFile="Interface\AddOns\NMOTD\images\irwin"> <!-- Setting material for background and edge -->
 					<BackgroundInsets>
 						<AbsInset left="5" right="5" top="5" bottom="5"/> <!-- Moving background -->
 					</BackgroundInsets>
 				</backdrop>
 
 				<Frames>
-				    <ScrollFrame name="Text_Scroll" inherits="UIPanelScrollFrameTemplate">
+				    <ScrollFrame name="Text_Scroll">
 				        <Anchors>
-				            <Anchor point="TOPLEFT" x="12" y="-10"/>
+				            <Anchor point="TOPLEFT" x="12" y="-130"/>
 				                <Anchor point="BOTTOMRIGHT" x="-22" y="10"/>
 				            </Anchors>
 				            <ScrollChild>
 				                <Frame>
 					                <Size x="10" y="10"/>
 					                <Frames>
-					                    <SimpleHTML name="Text_Scroll_Content">
+					                    <SimpleHTML name="Text_Scroll_Content_Two">
 					                        <Size>
-												<AbsDimension x="350" y="150" />
+												<RelDimension x="0.2" y="0.009" />
 											</Size>
 					                        <Anchors>
 					                            <Anchor point="TOPLEFT" x="0" y="-5"/>
@@ -203,13 +226,13 @@
 
 			<Frame name="BoxWithInfoThree">
 				<Size>
-					<AbsDimension x="400" y="440" />
+					<RelDimension x="0.33" y="0.33" />
 				</Size>
 
 				<Anchors>
-					<Anchor point="CENTER">
-						<Offset>
-							<AbsDimension x = "125" y = "25" />
+					<Anchor point="RIGHT">
+						<Offset name="Offsetsize">
+							<AbsDimension x = "-40" y = "25" />
 						</Offset>
 					</Anchor>
 				</Anchors>
@@ -221,18 +244,18 @@
 				</backdrop>
 
 				<Frames>
-				    <ScrollFrame name="Text_Scroll" inherits="UIPanelScrollFrameTemplate">
+				    <ScrollFrame name="Text_Scroll">
 				        <Anchors>
-				            <Anchor point="TOPLEFT" x="12" y="-260"/>
-				                <Anchor point="BOTTOMRIGHT" x="-22" y="10"/>
+				            <Anchor point="TOPLEFT" x="12" y="-350"/>
+				                <Anchor point="BOTTOMRIGHT" x="-22" y="20"/>
 				            </Anchors>
 				            <ScrollChild>
 				                <Frame>
 					                <Size x="10" y="10"/>
 					                <Frames>
-					                    <SimpleHTML name="Text_Scroll_Contenttt">
+					                    <SimpleHTML name="Text_Scroll_Content_Three">
 					                        <Size>
-												<AbsDimension x="350" y="150" />
+												<RelDimension x="0.32" y="0.09" />
 											</Size>
 					                        <Anchors>
 					                            <Anchor point="TOPLEFT" x="0" y="-5"/>
@@ -247,6 +270,20 @@
 		</Frames>
 
         <Frames> <!-- Button -->
+        	<Button name="IconTest" text="Что нового?" inherits="MyFont">
+				<Size x="400" y="64"/>
+				<Anchors>
+					<Anchor point="TOP"/>
+				</Anchors>
+				<Layers>
+				<Layer level="Texture">
+				<Texture name="$topheader"
+					file="Interface\AddOns\NMOTD\images\ramka" setAllPoints="true"/>
+				</Layer>
+				</Layers>
+			</Button>
+
+
 			<Button name="$parentClose" text="   Закрыть   " inherits="UIPanelButtonTemplate">
 				<Size>
 					<AbsDimension x="128" y='24' />

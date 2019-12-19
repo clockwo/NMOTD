@@ -160,7 +160,7 @@
 				</Layers>
 
 				<Frames>
-					<SimpleHTML name="Text_Scroll_Content_One">
+					<SimpleHTML name="Text_Content_One">
 						<Size x="300" y="91"/>
 					    <Anchors>
 					        <Anchor point="BOTTOMLEFT" relativeKey="SmallBoxWithContentOneBorder" relativePoint="BOTTOMRIGHT"/>
@@ -189,7 +189,7 @@
 				</Layers>
 
 				<Frames>
-					<SimpleHTML name="Text_Scroll_Content_Two">
+					<SimpleHTML name="Text_Content_Two">
 						<Size x="300" y="91"/>
 					    <Anchors>
 					        <Anchor point="BOTTOMLEFT" relativeKey="SmallBoxWithContentTwoBorder" relativePoint="BOTTOMRIGHT"/>
@@ -218,7 +218,7 @@
 				</Layers>
 
 				<Frames>
-					<SimpleHTML name="Text_Scroll_Content_Three">
+					<SimpleHTML name="Text_Content_Three">
 						<Size x="350" y="91"/>
 					    <Anchors>
 					        <Anchor point="BOTTOMLEFT" relativeKey="SmallBoxWithContentThreeBorder" relativePoint="BOTTOMRIGHT"/>

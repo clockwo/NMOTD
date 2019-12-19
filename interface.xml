@@ -123,7 +123,7 @@
 	</Frame>
 
 	<!--MainFrame-->
-	<Frame name="mainframe" inherits="dmmotdframe" parent="UIParent" hidden="true">
+	<Frame name="mainframe" inherits="dmmotdframe" parent="UIParent" hidden="false">
 		<Scripts>
 			<OnLoad function="initframe" />
 			<OnEvent function="new_character" />
@@ -153,9 +153,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="BACKGROUND">
-						<Texture>
-							<Color r="1.0" g="0.0" b="0.0" a="1.0"/>
-						</Texture>
+						<Texture parentKey="tex_image_one" />
 					</Layer>
 				</Layers>
 
@@ -182,9 +180,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="BACKGROUND">
-						<Texture>
-							<Color r="1.0" g="0.0" b="0.0" a="1.0"/>
-						</Texture>
+						<Texture parentKey="tex_image_two" />
 					</Layer>
 				</Layers>
 
@@ -211,9 +207,7 @@
 				</Anchors>
 				<Layers>
 					<Layer level="BACKGROUND">
-						<Texture>
-							<Color r="1.0" g="0.0" b="0.0" a="1.0"/>
-						</Texture>
+						<Texture parentKey="tex_image_three" />
 					</Layer>
 				</Layers>
 

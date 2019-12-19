@@ -29,3 +29,11 @@ content.text_three = [[<html><body><br/><h1 align="center">|cFFe36c09 ПЕСНЯ
 Многих я уже не вспомню, но...<br/>
 </p><br/>
 </body></html>]]
+
+--ДВЕ КАРТИНКИ РАЗРЕШЕНИЕМ 512x256 и одна 512x512 (Формат TGA)
+
+content.image_one = "Interface\\AddOns\\NMOTD\\images\\yasen.tga" --512x256
+
+content.image_two = "Interface\\AddOns\\NMOTD\\images\\fattyirwin.tga"	--512x256
+
+content.image_three = "Interface\\AddOns\\NMOTD\\images\\trollbane.tga" --512x512

@@ -1,7 +1,10 @@
-
 function initframe(self)
 	self:RegisterEvent("ADDON_LOADED")
 	self.TitleTopBox:SetText(content.TitleTopBoxText)
+	self.SmallBoxWithContentOneBorder.tex_image_one:SetTexture(content.image_one)
+	self.SmallBoxWithContentTwoBorder.tex_image_two:SetTexture(content.image_two)
+	self.SmallBoxWithContentThreeBorder.tex_image_three:SetTexture(content.image_three)
+	textedit()
 end
 
 function new_character(frame, event, ...)
@@ -9,7 +12,6 @@ function new_character(frame, event, ...)
 		if (not onetimevariable) or (onetimevariable == nil) then
 			onetimevariable = true
 			mainframe:Show()
-			textedit()
 		end
 	end
 end

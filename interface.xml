@@ -2,13 +2,6 @@
 	<Script file="main.lua"/>
 	<Script file="text_content.lua"/>
 
-	<!--Create font-->
-	<Font name="MyFont" font="Fonts\FRIZQT___CYR.TTF" virtual="true">
-	  <FontHeight>
-	    <AbsValue val="12"/>
-	  </FontHeight>
-	</Font>
-
 	<!--Create template -->
 	<Frame name="dmmotdframe" virtual="true">
 		<Layers>
@@ -123,7 +116,7 @@
 	</Frame>
 
 	<!--MainFrame-->
-	<Frame name="mainframe" inherits="dmmotdframe" parent="UIParent" hidden="false">
+	<Frame name="mainframe" inherits="dmmotdframe" parent="UIParent" hidden="true">
 		<Scripts>
 			<OnLoad function="initframe" />
 			<OnEvent function="new_character" />

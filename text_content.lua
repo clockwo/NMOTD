@@ -1,18 +1,25 @@
-textone = [[<html><body><br/><h3 align="center">|cFFe36c09 ПЕСНЯ ПРО ИГРУ ПРЕСТОЛОВ|r</h3>
+content = {}
+
+--ПЕРЕД ИПОЛЬЗОВАНИЕМ ЗНАТЬ
+--КОЛИЧЕСТВО СТРОК ЧТО СЕЙЧАС ЗАДАНО В HTML, ДОЛЖНО ЧЕТКО СОБЛЮДАТЬСЯ, ИНАЧЕ МОГУТ БЫТЬ РАЗНЫЕ БАГИ
+
+content.TitleTopBoxText = "Что нового?"
+
+content.text_one = [[<html><body><br/><h3 align="center">|cFFe36c09 ПЕСНЯ ПРО ИГРУ ПРЕСТОЛОВ|r</h3>
 <p align="center">Игры и Престолы<br/>
 Много серий и сезонов<br/>
 Персонажей тоже много<br/>
 </p><br/>
 </body></html>]]
 
-texttwo = [[<html><body><br/><h3 align="center">|cFFe36c09 ПЕСНЯ ПРО ИГРУ ПРЕСТОЛОВ|r</h3>
+content.text_two = [[<html><body><br/><h3 align="center">|cFFe36c09 ПЕСНЯ ПРО ИГРУ ПРЕСТОЛОВ|r</h3>
 <p align="center">Игры и Престолы<br/>
 Много серий и сезонов<br/>
 Персонажей тоже много<br/>
 </p><br/>
 </body></html>]]
 
-textthree = [[<html><body><br/><h1 align="center">|cFFe36c09 ПЕСНЯ ПРО ИГРУ ПРЕСТОЛОВ|r</h1>
+content.text_three = [[<html><body><br/><h1 align="center">|cFFe36c09 ПЕСНЯ ПРО ИГРУ ПРЕСТОЛОВ|r</h1> 
 <p align="center">Игры и Престолы<br/>
 Много серий и сезонов<br/>
 Персонажей тоже много<br/>

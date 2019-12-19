@@ -10,7 +10,7 @@
 	</Font>
 
 	<!--Create template -->
-	<Frame name="QuestionBordersFrame" virtual="true">
+	<Frame name="dmmotdframe" virtual="true">
 		<Layers>
 			<Layer level="ARTWORK">
 				<!-- CORNERS -->
@@ -72,6 +72,7 @@
 					</Anchors>
 					<TexCoords left="0.00000000" right="1.00000000" top="0.17187500" bottom="0.33984375"/>
 				</Texture>
+
 				<Texture parentKey="TopBorder" file="Interface\QuestionFrame\Question-HTile" horizTile="true">
 					<Size x="256" y="91"/>
 					<Anchors>
@@ -95,6 +96,26 @@
 					</Anchors>
 				</Texture>
 			</Layer>
+			--Text in box(ramka)
+			<Layer level="OVERLAY">
+
+				<Texture parentKey="TopBox" file = "Interface\AddOns\NMOTD\images\ramka" horizTile="false">
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeKey="$parent.BorderTopLeft" relativePoint="TOPRIGHT" y="-1"/>
+						<Anchor point="TOPRIGHT" relativeKey="$parent.BorderTopRight" relativePoint="TOPLEFT" y="-1"/>
+					</Anchors>
+				</Texture>
+
+				<FontString name="$parent_Title" parentKey="TitleTopBox" justifyH="CENTER" maxLines="1" inherits="GameFontNormalHuge">
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeKey="$parent.BorderTopLeft" relativePoint="TOPRIGHT" y="-1">
+							<Offset x="0" y="-25" />
+						</Anchor>
+						<Anchor point="TOPRIGHT" relativeKey="$parent.BorderTopRight" relativePoint="TOPLEFT" y="-1"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+
 		</Layers>
 		<Anchors>
 			<Anchor point="CENTER" x="0" y="0"/>
@@ -102,9 +123,10 @@
 	</Frame>
 
 	<!--MainFrame-->
-	<Frame name="mainframe" inherits="QuestionBordersFrame" parent="UIParent" hidden="false">
+	<Frame name="mainframe" inherits="dmmotdframe" parent="UIParent" hidden="true">
 		<Scripts>
 			<OnLoad function="initframe" />
+			<OnEvent function="new_character" />
 		</Scripts>
 
 		<Size>
@@ -118,173 +140,99 @@
 			</Anchor>
 		</Anchors>
 
-
-
 		<!--BoxWithInfo-->
 		<Frames>
-
-		<Texture name="MyTexture" file="Interface\AddOns\NMOTD\images\ramka">
-			<Size>
-		  		<AbsDimension x="13" y="13"/>
-			</Size>
-			<Anchors>
-		  		<Anchor point="TOP">
-			    	<Offset>
-			      		<AbsDimension x="0" y="0"/>
-			    	</Offset>
-		  		</Anchor>
-			</Anchors>
-			<TexCoords left="0.398" right="0.445" top="0.402" bottom="0.449"/>
-		</Texture>
-			<Frame name="BoxWithInfoOne">
+			<Frame name="SmallBoxWithContentOne" parentKey="SmallBoxWithContentOneBorder" parent="mainframe">
 				<Size>
-					<RelDimension x="0.22" y="0.15" />
+					<RelDimension x="0.22" y="0.14" />
 				</Size>
-
 				<Anchors>
 					<Anchor point="TOPLEFT">
-						<Offset>
-							<AbsDimension x = "30" y = "-50" />
-						</Offset>
+						<Offset x="50" y="-70"/>
 					</Anchor>
-				</Anchors>
-
-				<backdrop bgFile="Interface\AddOns\NMOTD\images\magkhar"> <!-- Setting material for background and edge -->
-					<BackgroundInsets>
-						<AbsInset left="5" right="5" top="5" bottom="5"/> <!-- Moving background -->
-					</BackgroundInsets>
-				</backdrop>
-
-				<Frames>
-				    <ScrollFrame name="Text_Scroll">
-				        <Anchors>
-				            <Anchor point="TOPLEFT" x="12" y="-130"/>
-				                <Anchor point="BOTTOMRIGHT" x="-22" y="10"/>
-				            </Anchors>
-				            <ScrollChild>
-				                <Frame>
-					                <Size x="10" y="-10"/>
-					                <Frames>
-					                    <SimpleHTML name="Text_Scroll_Content_One">
-					                        <Size>
-												<RelDimension x="0.2" y="0.009" />
-											</Size>
-					                        <Anchors>
-					                            <Anchor point="TOPLEFT" x="0" y="-5"/>
-					                        </Anchors>
-					                    </SimpleHTML>
-					                </Frames>
-				                </Frame>
-				            </ScrollChild>
-				    </ScrollFrame>
-		        </Frames>
-			</Frame>
-
-			<Frame name="BoxWithInfoTwo">
-				<Size>
-					<RelDimension x="0.22" y="0.15" />
-				</Size>
-
-				<Anchors>
-					<Anchor point="BOTTOMLEFT">
-						<Offset>
-							<AbsDimension x = "30" y = "50" />
-						</Offset>
-					</Anchor>
-				</Anchors>
-
-				<backdrop bgFile="Interface\AddOns\NMOTD\images\irwin"> <!-- Setting material for background and edge -->
-					<BackgroundInsets>
-						<AbsInset left="5" right="5" top="5" bottom="5"/> <!-- Moving background -->
-					</BackgroundInsets>
-				</backdrop>
-
-				<Frames>
-				    <ScrollFrame name="Text_Scroll">
-				        <Anchors>
-				            <Anchor point="TOPLEFT" x="12" y="-130"/>
-				                <Anchor point="BOTTOMRIGHT" x="-22" y="10"/>
-				            </Anchors>
-				            <ScrollChild>
-				                <Frame>
-					                <Size x="10" y="10"/>
-					                <Frames>
-					                    <SimpleHTML name="Text_Scroll_Content_Two">
-					                        <Size>
-												<RelDimension x="0.2" y="0.009" />
-											</Size>
-					                        <Anchors>
-					                            <Anchor point="TOPLEFT" x="0" y="-5"/>
-					                        </Anchors>
-					                    </SimpleHTML>
-					                </Frames>
-				                </Frame>
-				            </ScrollChild>
-				    </ScrollFrame>
-		        </Frames>
-			</Frame>
-
-			<Frame name="BoxWithInfoThree">
-				<Size>
-					<RelDimension x="0.33" y="0.33" />
-				</Size>
-
-				<Anchors>
-					<Anchor point="RIGHT">
-						<Offset name="Offsetsize">
-							<AbsDimension x = "-40" y = "25" />
-						</Offset>
-					</Anchor>
-				</Anchors>
-
-				<backdrop bgFile="Interface\AddOns\NMOTD\images\danath"> <!-- Setting material for background and edge -->
-					<BackgroundInsets>
-						<AbsInset left="5" right="5" top="5" bottom="5"/> <!-- Moving background -->
-					</BackgroundInsets>
-				</backdrop>
-
-				<Frames>
-				    <ScrollFrame name="Text_Scroll">
-				        <Anchors>
-				            <Anchor point="TOPLEFT" x="12" y="-350"/>
-				                <Anchor point="BOTTOMRIGHT" x="-22" y="20"/>
-				            </Anchors>
-				            <ScrollChild>
-				                <Frame>
-					                <Size x="10" y="10"/>
-					                <Frames>
-					                    <SimpleHTML name="Text_Scroll_Content_Three">
-					                        <Size>
-												<RelDimension x="0.32" y="0.09" />
-											</Size>
-					                        <Anchors>
-					                            <Anchor point="TOPLEFT" x="0" y="-5"/>
-					                        </Anchors>
-					                    </SimpleHTML>
-					                </Frames>
-				                </Frame>
-				            </ScrollChild>
-				    </ScrollFrame>
-		        </Frames>
-			</Frame>
-		</Frames>
-
-        <Frames> <!-- Button -->
-        	<Button name="IconTest" text="Что нового?" inherits="MyFont">
-				<Size x="400" y="64"/>
-				<Anchors>
-					<Anchor point="TOP"/>
 				</Anchors>
 				<Layers>
-				<Layer level="Texture">
-				<Texture name="$topheader"
-					file="Interface\AddOns\NMOTD\images\ramka" setAllPoints="true"/>
-				</Layer>
+					<Layer level="BACKGROUND">
+						<Texture>
+							<Color r="1.0" g="0.0" b="0.0" a="1.0"/>
+						</Texture>
+					</Layer>
 				</Layers>
-			</Button>
 
+				<Frames>
+					<SimpleHTML name="Text_Scroll_Content_One">
+						<Size x="300" y="91"/>
+					    <Anchors>
+					        <Anchor point="BOTTOMLEFT" relativeKey="SmallBoxWithContentOneBorder" relativePoint="BOTTOMRIGHT"/>
+					        <Anchor point="BOTTOMPRIGHT" relativeKey="SmallBoxWithContentOneBorder" relativePoint="BOTTOMLEFT"/>
+					        <Anchor point="CENTER" relativePoint="BOTTOM"  x="0" y="40"/>
+					    </Anchors>
+					</SimpleHTML>
+		        </Frames>
+			</Frame> <!--ONE-->
 
-			<Button name="$parentClose" text="   Закрыть   " inherits="UIPanelButtonTemplate">
+			<Frame name="SmallBoxWithContentTwo" parentKey="SmallBoxWithContentTwoBorder" parent="mainframe">
+				<Size>
+					<RelDimension x="0.22" y="0.14" />
+				</Size>
+				<Anchors>
+					<Anchor point="BOTTOMLEFT">
+						<Offset x="50" y="70"/>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture>
+							<Color r="1.0" g="0.0" b="0.0" a="1.0"/>
+						</Texture>
+					</Layer>
+				</Layers>
+
+				<Frames>
+					<SimpleHTML name="Text_Scroll_Content_Two">
+						<Size x="300" y="91"/>
+					    <Anchors>
+					        <Anchor point="BOTTOMLEFT" relativeKey="SmallBoxWithContentTwoBorder" relativePoint="BOTTOMRIGHT"/>
+					        <Anchor point="BOTTOMPRIGHT" relativeKey="SmallBoxWithContentTwoBorder" relativePoint="BOTTOMLEFT"/>
+					        <Anchor point="CENTER" relativePoint="BOTTOM"  x="0" y="40"/>
+					    </Anchors>
+					</SimpleHTML>
+		        </Frames>
+			</Frame> <!--TWO-->
+
+			<Frame name="SmallBoxWithContentThree" parentKey="SmallBoxWithContentThreeBorder" parent="mainframe">
+				<Size>
+					<RelDimension x="0.3" y="0.29" />
+				</Size>
+				<Anchors>
+					<Anchor point="RIGHT">
+						<Offset x="-40" y="0"/>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture>
+							<Color r="1.0" g="0.0" b="0.0" a="1.0"/>
+						</Texture>
+					</Layer>
+				</Layers>
+
+				<Frames>
+					<SimpleHTML name="Text_Scroll_Content_Three">
+						<Size x="350" y="91"/>
+					    <Anchors>
+					        <Anchor point="BOTTOMLEFT" relativeKey="SmallBoxWithContentThreeBorder" relativePoint="BOTTOMRIGHT"/>
+					        <Anchor point="BOTTOMPRIGHT" relativeKey="SmallBoxWithContentThreeBorder" relativePoint="BOTTOMLEFT"/>
+					        <Anchor point="CENTER" relativePoint="BOTTOM"  x="0" y="120"/>
+					    </Anchors>
+					</SimpleHTML>
+		        </Frames>
+			</Frame> <!--THREE-->
+		</Frames> <!--ENDBOXESWITHINFO-->
+
+		<!-- Button -->
+        <Frames> 
+			<Button name="$parentClose" text="Закрыть" inherits="UIPanelButtonTemplate">
 				<Size>
 					<AbsDimension x="128" y='24' />
 				</Size>
